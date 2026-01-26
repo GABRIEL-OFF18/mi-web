@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,12 +8,43 @@
       font-family: Arial, sans-serif;
       text-align: center;
     }
+    .imagen-redondeada {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
   <h1>Hola, soy [Tu nombre]</h1>
+  <img src="https://files.catbox.moe/y91di0.jpg" class="imagen-redondeada">
   <p>Esta es mi página de presentación.</p>
   <p>Soy un [profesión/estudiante] apasionado por [intereses].</p>
   <button>Contáctame</button>
 </body>
 </html>
+```
+**styles.css** (no cambia)
+```css
+body {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  color: #333;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+```
