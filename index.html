@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,25 @@
       height: 200px;
       object-fit: cover;
     }
+    .boton {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .boton:hover {
+      background-color: #3e8e41;
+    }
+    .proyecto {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
@@ -21,30 +40,24 @@
   <img src="https://files.catbox.moe/y91di0.jpg" class="imagen-redondeada">
   <p>Esta es mi página de presentación.</p>
   <p>Soy un [joven/estudiante] apasionado por [la programación].</p>
-  <button>Contáctame</button>
+  <a href="tel:+51[Tu número de teléfono]" class="boton">Contáctame por WhatsApp</a>
+  
+  <h2>Mis Proyectos</h2>
+  <div class="proyecto">
+    <h3>Proyecto 1</h3>
+    <p>HAYABUSA-MD 1.</p>
+    <a href="[Enlace al proyecto 1]" class="boton">Ver proyecto</a>
+  </div>
+  <div class="proyecto">
+    <h3>Proyecto 2</h3>
+    <p>Descripción del proyecto 2.</p>
+    <a href="[Enlace al proyecto 2]" class="boton">Ver proyecto</a>
+  </div>
+  
+  <h2>Mi GitHub</h2>
+  <a href="https://github.com/[Tu nombre de usuario de GitHub]" class="boton">Visita mi GitHub</a>
 </body>
 </html>
 ```
-**styles.css** (no cambia)
-```css
-body {
-  background-color: #f2f2f2;
-}
-
-h1 {
-  color: #333;
-}
-
-button {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #3e8e41;
-}
-```
+La imagen redondeada es: 
+<img src="https://files.catbox.moe/y91di0.jpg" class="imagen-redondeada">
