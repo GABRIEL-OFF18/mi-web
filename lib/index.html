@@ -6,176 +6,213 @@
   <title>Gabriel web | Official</title>
   <style>
     :root {
-      /* Colores solicitados */
-      --bg-negro-gris: #1a1a1a;
-      --card-bg: #242424;
+      --bg-principal: #0f0f0f; /* Negro casi total */
+      --bg-gris: #1a1a1a;      /* Negro grisáceo para tarjetas */
       --celeste-azul: #00d4ff;
-      --verde-brillante: #4CAF50;
-      --text-color: #ffffff;
+      --verde-fluo: #39ff14;
+      --texto: #ffffff;
+      --texto-secundario: #a0a0a0;
     }
 
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: var(--bg-negro-gris);
-      color: var(--text-color);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-principal);
+      color: var(--texto);
       margin: 0;
       padding: 0;
+      line-height: 1.6;
+    }
+
+    /* --- NAVBAR PROFESIONAL --- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(26, 26, 26, 0.8);
+      backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 10%;
+      z-index: 1000;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      color: var(--celeste-azul);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--texto);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: 0.3s;
+      opacity: 0.8;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--celeste-azul);
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      margin-top: 120px;
+      padding: 20px;
       text-align: center;
     }
 
-    /* --- MENÚ IZQUIERDA --- */
-    .menu-container {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      text-align: left;
-    }
-
-    #menu-toggle { display: none; }
-
-    .menu-button {
-      background: var(--verde-brillante);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .nav-menu {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      background: var(--card-bg);
-      border-left: 4px solid var(--celeste-azul);
-      border-radius: 4px;
-      display: none;
-      width: 220px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-    }
-
-    .nav-menu a {
-      color: #e0e0e0;
-      text-decoration: none;
-      display: block;
-      padding: 15px;
-      border-bottom: 1px solid #333;
-      transition: 0.3s;
-    }
-
-    .nav-menu a:hover {
-      background: #2d2d2d;
-      color: var(--celeste-azul);
-      padding-left: 20px;
-    }
-
-    #menu-toggle:checked + .menu-button + .nav-menu { display: block; }
-
-    /* --- CONTENEDOR PRINCIPAL --- */
-    .container {
-      max-width: 850px;
-      margin: 80px auto;
-      padding: 20px;
-    }
-
-    .imagen-redondeada {
+    .profile-img {
       border-radius: 50%;
-      width: 190px;
-      height: 190px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
-      border: 4px solid var(--celeste-azul);
+      border: 3px solid var(--celeste-azul);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
       margin-bottom: 20px;
-      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
     }
 
-    .boton {
+    h1 {
+      font-size: 3rem;
+      margin: 10px 0;
+      background: linear-gradient(90deg, #fff, var(--celeste-azul));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--texto-secundario);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* --- BOTONES --- */
+    .btn-primary {
       display: inline-block;
-      background: linear-gradient(135deg, var(--verde-brillante), var(--celeste-azul));
-      color: #000; /* Texto oscuro para mejor contraste sobre colores claros */
-      padding: 12px 28px;
-      margin: 10px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
+      padding: 12px 35px;
+      background: var(--celeste-azul);
+      color: #000;
       text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .boton:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
-      filter: brightness(1.1);
-    }
-
-    .proyecto {
-      background: var(--card-bg);
-      margin: 25px 0;
-      padding: 30px;
-      border-radius: 20px;
-      border: 1px solid #333;
+      font-weight: 700;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
-    .proyecto:hover {
-      border-color: var(--celeste-azul);
-      background: #2a2a2a;
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
     }
 
-    h1 { font-size: 2.8rem; margin-bottom: 0; }
-    span.highlight { color: var(--celeste-azul); }
-    p { color: #b0b0b0; line-height: 1.6; }
+    /* --- PROYECTOS --- */
+    .section-projects {
+      padding: 60px 10%;
+    }
 
-    .logo-footer {
-      width: 100px;
-      height: 100px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--bg-gris);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      text-align: left;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--celeste-azul);
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--celeste-azul);
+    }
+
+    .card p {
+      color: var(--texto-secundario);
+      font-size: 0.95rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--verde-fluo);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .footer-img {
+      width: 80px;
+      opacity: 0.5;
       margin-top: 50px;
-      border: 2px solid #444;
+    }
+
+    @media (max-width: 600px) {
+      .navbar { padding: 1rem; }
+      .nav-links { gap: 15px; }
+      h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="menu-container">
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-button">☰ MENU</label>
-    <nav class="nav-menu">
-      <a href="https://whatsapp.com/channel/0029VbCJFHmFy72CvfvzSR0Qy" target="_blank">📢 Canal WhatsApp</a>
-      <a href="https://github.com/GABRIEL-OFF18" target="_blank">⭐ Mi GitHub</a>
-    </nav>
+  <nav class="navbar">
+    <div class="nav-logo">GABRIEL-UX</div>
+    <div class="nav-links">
+      <a href="https://whatsapp.com/channel/0029VbCJFHmFy72CvfvzSR0Qy" target="_blank">Canal</a>
+      <a href="https://github.com/GABRIEL-OFF18" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <img src="https://files.catbox.moe/y91di0.jpg" class="profile-img" alt="Gabriel">
+    <h1>Gabriel web | Official</h1>
+    <p class="subtitle">Desarrollador enfocado en automatización de bots y soluciones web modernas.</p>
+    <a href="https://wa.me/51941658192" class="btn-primary">Contactar por WhatsApp</a>
   </div>
 
-  <div class="container">
-    <h1>Hola, soy <span class="highlight">GABRIEL-UX</span></h1>
-    <img src="https://files.catbox.moe/y91di0.jpg" class="imagen-redondeada">
-    
-    <p>Bienvenido a mi sitio oficial. Soy un programador enfocado en soluciones digitales.</p>
-    <p>¿Buscas una web profesional o un bot de ventas automatizado? <br> Estoy listo para ayudarte, contáctame abajo.</p>
-    
-    <a href="https://wa.me/51941658192" class="boton">WhatsApp: 51941658192</a>
+  <section class="section-projects">
+    <h2 style="text-align: center;">Proyectos Destacados</h2>
+    <div class="grid">
+      
+      <div class="card">
+        <h3>HAYABUSA-MD</h3>
+        <p>Bot de alto rendimiento para WhatsApp. Optimizado para grupos y gestión de usuarios.</p>
+        <a href="https://github.com/GABRIEL-OFF18/itachi-bot-MD" class="btn-outline">Ver Repositorio →</a>
+      </div>
 
-    <h2 style="margin-top: 60px; color: var(--celeste-azul);">Proyectos Destacados</h2>
-    
-    <div class="proyecto">
-      <h3>HAYABUSA-MD 1</h3>
-      <p>Bot de alto rendimiento para WhatsApp con múltiples comandos.</p>
-      <a href="https://github.com/GABRIEL-OFF18/itachi-bot-MD" class="boton">Explorar Código</a>
+      <div class="card">
+        <h3>AAMOM-MD</h3>
+        <p>Sistema avanzado con múltiples herramientas de automatización y respuesta inteligente.</p>
+        <a href="https://github.com/Gabrie-ux/Aamon-" class="btn-outline">Ver Repositorio →</a>
+      </div>
+
     </div>
-
-    <div class="proyecto">
-      <h3>AAMOM-MD 2</h3>
-      <p>Sistema avanzado de automatización y respuesta rápida.</p>
-      <a href="https://github.com/Gabrie-ux/Aamon-" class="boton">Explorar Código</a>
+    
+    <div style="text-align: center;">
+      <img src="https://files.catbox.moe/gpzzhu.jpg" class="profile-img footer-img" alt="Logo">
     </div>
-
-    <div style="margin-top: 40px;">
-      <a href="https://github.com/gabrie-ux" class="boton" style="background: #333; color: white; border: 1px solid #555;">Ver más en GitHub</a>
-    </div>
-
-    <img src="https://files.catbox.moe/gpzzhu.jpg" class="imagen-redondeada logo-footer">
-  </div>
+  </section>
 
 </body>
-  </html>
+</html>
