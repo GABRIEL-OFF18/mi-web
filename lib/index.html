@@ -1,62 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Mi Presentación</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel web | Official</title>
   <style>
+    :root {
+      /* Colores solicitados */
+      --bg-negro-gris: #1a1a1a;
+      --card-bg: #242424;
+      --celeste-azul: #00d4ff;
+      --verde-brillante: #4CAF50;
+      --text-color: #ffffff;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: var(--bg-negro-gris);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
       text-align: center;
     }
+
+    /* --- MENÚ IZQUIERDA --- */
+    .menu-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      text-align: left;
+    }
+
+    #menu-toggle { display: none; }
+
+    .menu-button {
+      background: var(--verde-brillante);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .nav-menu {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background: var(--card-bg);
+      border-left: 4px solid var(--celeste-azul);
+      border-radius: 4px;
+      display: none;
+      width: 220px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    .nav-menu a {
+      color: #e0e0e0;
+      text-decoration: none;
+      display: block;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .nav-menu a:hover {
+      background: #2d2d2d;
+      color: var(--celeste-azul);
+      padding-left: 20px;
+    }
+
+    #menu-toggle:checked + .menu-button + .nav-menu { display: block; }
+
+    /* --- CONTENEDOR PRINCIPAL --- */
+    .container {
+      max-width: 850px;
+      margin: 80px auto;
+      padding: 20px;
+    }
+
     .imagen-redondeada {
       border-radius: 50%;
-      width: 200px;
-      height: 200px;
+      width: 190px;
+      height: 190px;
       object-fit: cover;
+      border: 4px solid var(--celeste-azul);
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
     }
+
     .boton {
-      background-color: #4CAF50;
-      color: #fff;
-      padding: 10px 20px;
+      display: inline-block;
+      background: linear-gradient(135deg, var(--verde-brillante), var(--celeste-azul));
+      color: #000; /* Texto oscuro para mejor contraste sobre colores claros */
+      padding: 12px 28px;
+      margin: 10px;
       border: none;
-      border-radius: 5px;
+      border-radius: 50px;
       cursor: pointer;
       text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
     }
+
     .boton:hover {
-      background-color: #3e8e41;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+      filter: brightness(1.1);
     }
+
     .proyecto {
-      margin: 20px;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: var(--card-bg);
+      margin: 25px 0;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .proyecto:hover {
+      border-color: var(--celeste-azul);
+      background: #2a2a2a;
+    }
+
+    h1 { font-size: 2.8rem; margin-bottom: 0; }
+    span.highlight { color: var(--celeste-azul); }
+    p { color: #b0b0b0; line-height: 1.6; }
+
+    .logo-footer {
+      width: 100px;
+      height: 100px;
+      margin-top: 50px;
+      border: 2px solid #444;
     }
   </style>
 </head>
 <body>
-  <h1>Hola, soy [GABRIEL-UX]</h1>
-  <img src="https://files.catbox.moe/y91di0.jpg"
-class="imagen-redondeada">                                                        
-  <p>Esta es mi página de presentación.</p>
-  <p>Soy un [joven/estudiante] apasionado por [la programación] [buscas crear una web? o un bot de ventas? GABRIEL-UX está acá para ayudarte copia mi número y ablame 👇🏻].</p>
-  <button class="boton" onclick="navigator.clipboard.writeText('51941658192')">Copiar número: 51941658192</button>
-  
-  <h2>Mis Proyectos</h2>
-  <div class="proyecto">
-    <h3>Proyecto 1</h3>
-    <p>HAYABUSA-MD 1.</p>
-    <a href="https://github.com/GABRIEL-OFF18/itachi-bot-MD " class="boton">Ver proyecto</a>
+
+  <div class="menu-container">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-button">☰ MENU</label>
+    <nav class="nav-menu">
+      <a href="https://whatsapp.com/channel/0029VbCJFHmFy72CvfvzSR0Qy" target="_blank">📢 Canal WhatsApp</a>
+      <a href="https://github.com/GABRIEL-OFF18" target="_blank">⭐ Mi GitHub</a>
+    </nav>
   </div>
-  <div class="proyecto">
-    <h3>Proyecto 2</h3>
-    <p>AAMOM-MD 2.</p>
-    <a href="https://github.com/Gabrie-ux/Aamon-"
-class="boton">ver proyecto</a>\                                                          
+
+  <div class="container">
+    <h1>Hola, soy <span class="highlight">GABRIEL-UX</span></h1>
+    <img src="https://files.catbox.moe/y91di0.jpg" class="imagen-redondeada">
+    
+    <p>Bienvenido a mi sitio oficial. Soy un programador enfocado en soluciones digitales.</p>
+    <p>¿Buscas una web profesional o un bot de ventas automatizado? <br> Estoy listo para ayudarte, contáctame abajo.</p>
+    
+    <a href="https://wa.me/51941658192" class="boton">WhatsApp: 51941658192</a>
+
+    <h2 style="margin-top: 60px; color: var(--celeste-azul);">Proyectos Destacados</h2>
+    
+    <div class="proyecto">
+      <h3>HAYABUSA-MD 1</h3>
+      <p>Bot de alto rendimiento para WhatsApp con múltiples comandos.</p>
+      <a href="https://github.com/GABRIEL-OFF18/itachi-bot-MD" class="boton">Explorar Código</a>
+    </div>
+
+    <div class="proyecto">
+      <h3>AAMOM-MD 2</h3>
+      <p>Sistema avanzado de automatización y respuesta rápida.</p>
+      <a href="https://github.com/Gabrie-ux/Aamon-" class="boton">Explorar Código</a>
+    </div>
+
+    <div style="margin-top: 40px;">
+      <a href="https://github.com/gabrie-ux" class="boton" style="background: #333; color: white; border: 1px solid #555;">Ver más en GitHub</a>
+    </div>
+
+    <img src="https://files.catbox.moe/gpzzhu.jpg" class="imagen-redondeada logo-footer">
   </div>
-  
-  <h2>Mi GitHub</h2>
-  <a href="https://github.com/gabrie-ux" class="boton">Visita mi GitHub</a>
-  <img src="https://files.catbox.moe/gpzzhu.jpg" class="imagen-redondeada">
+
 </body>
-    </html>
+  </html>
