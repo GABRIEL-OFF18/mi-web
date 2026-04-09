@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTIBOTS-IAM-GABXZ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #0f172a;
+        }
+        
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #00ff88;
+        }
+        
+        nav {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            background: linear-gradient(90deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .menu a:hover {
+            color: #00ff88;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.95)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #00ff88;
+            color: #0f172a;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+        }
+        
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.6);
+        }
+        
+        .btn-group {
+            background: #25D366;
+            color: white;
+        }
+        
+        .btn-group:hover {
+            background: #20b858;
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+        
+        section {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            color: white;
+        }
+        
+        .bots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .bot-card {
+            background: #1e2937;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid transparent;
+        }
+        
+        .bot-card:hover {
+            transform: translateY(-15px);
+            border-color: #00ff88;
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3);
+        }
+        
+        .bot-image {
+            height: 220px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+        }
+        
+        .bot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .bot-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .bot-info h3 {
+            color: #00ff88;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+        
+        .bot-info p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            min-height: 80px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20b858;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5);
+        }
+        
+        .group-banner {
+            background: linear-gradient(90deg, #25D366, #00cc88);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+        
+        footer {
+            background: #0a0f1c;
+            color: #64748b;
+            text-align: center;
+            padding: 3rem 20px;
+            border-top: 3px solid #00ff88;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">MULTIBOTS-IAM-GABXZ</div>
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#bots">Nuestros Bots</a></li>
+                <li><a href="#grupo">Grupo WhatsApp</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>MULTIBOTS-IAM-GABXZ</h1>
+            <p>5 Bots Inteligentes en WhatsApp<br>¡Listos para ayudarte 24/7!</p>
+            
+            <div class="hero-buttons">
+                <!-- Botón para ver los bots -->
+                <a href="#bots" class="btn">
+                    👀 Ver todos los Bots
+                </a>
+                
+                <!-- Botón para el Grupo de WhatsApp -->
+                <a href="https://chat.whatsapp.com/TU-ENLACE-DEL-GRUPO-AQUI" 
+                   class="btn btn-group" target="_blank">
+                    📲 Únete al Grupo de WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Bots -->
+    <section id="bots" style="background: #1e2937;">
+        <h2>Nuestros 5 Bots Inteligentes</h2>
+        
+        <div class="bots-grid">
+            
+            <!-- Bot 1 -->
+            <div class="bot-card">
+                <div class="bot-image">
+                    <img src="https://picsum.photos/id/1015/600/400" alt="Bot 1">
+                </div>
+                <div class="bot-info">
+                    <h3>🤖 Bot 1 - Nombre del Bot</h3>
+                    <p>Aquí va la descripción corta del primer bot. Qué hace y cómo puede ayudarte.</p>
+                    <a href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hablar%20con%20el%20Bot%201" 
+                       class="whatsapp-btn" target="_blank">
+                        📱 Ver en WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bot 2 -->
+            <div class="bot-card">
+                <div class="bot-image">
+                    <img src="https://picsum.photos/id/201/600/400" alt="Bot 2">
+                </div>
+                <div class="bot-info">
+                    <h3>🤖 Bot 2 - Nombre del Bot</h3>
+                    <p>Aquí va la descripción corta del segundo bot. Qué hace y cómo puede ayudarte.</p>
+                    <a href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hablar%20con%20el%20Bot%202" 
+                       class="whatsapp-btn" target="_blank">
+                        📱 Ver en WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bot 3 -->
+            <div class="bot-card">
+                <div class="bot-image">
+                    <img src="https://picsum.photos/id/301/600/400" alt="Bot 3">
+                </div>
+                <div class="bot-info">
+                    <h3>🤖 Bot 3 - Nombre del Bot</h3>
+                    <p>Aquí va la descripción corta del tercer bot. Qué hace y cómo puede ayudarte.</p>
+                    <a href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hablar%20con%20el%20Bot%203" 
+                       class="whatsapp-btn" target="_blank">
+                        📱 Ver en WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bot 4 -->
+            <div class="bot-card">
+                <div class="bot-image">
+                    <img src="https://picsum.photos/id/401/600/400" alt="Bot 4">
+                </div>
+                <div class="bot-info">
+                    <h3>🤖 Bot 4 - Nombre del Bot</h3>
+                    <p>Aquí va la descripción corta del cuarto bot. Qué hace y cómo puede ayudarte.</p>
+                    <a href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hablar%20con%20el%20Bot%204" 
+                       class="whatsapp-btn" target="_blank">
+                        📱 Ver en WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bot 5 -->
+            <div class="bot-card">
+                <div class="bot-image">
+                    <img src="https://picsum.photos/id/501/600/400" alt="Bot 5">
+                </div>
+                <div class="bot-info">
+                    <h3>🤖 Bot 5 - Nombre del Bot</h3>
+                    <p>Aquí va la descripción corta del quinto bot. Qué hace y cómo puede ayudarte.</p>
+                    <a href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hablar%20con%20el%20Bot%205" 
+                       class="whatsapp-btn" target="_blank">
+                        📱 Ver en WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Banner del Grupo dentro de la sección de bots -->
+        <div class="group-banner">
+            ¿Quieres estar en contacto con todos los bots y la comunidad?<br>
+            <a href="https://chat.whatsapp.com/TU-ENLACE-DEL-GRUPO-AQUI" 
+               style="color: white; text-decoration: none; font-size: 1.4rem; margin-top: 10px; display: inline-block;"
+               target="_blank">
+                📲 Únete ahora al Grupo Oficial de WhatsApp →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="grupo">
+        <p>&copy; 2026 <strong>MULTIBOTS-IAM-GABXZ</strong> • Todos los derechos reservados</p>
+        <p>
+            <a href="https://chat.whatsapp.com/TU-ENLACE-DEL-GRUPO-AQUI" 
+               target="_blank" 
+               style="color: #00ff88; text-decoration: none;">
+                📲 Únete al Grupo de WhatsApp
+            </a>
+        </p>
+        <p>Hecha con ❤️ para tus bots de WhatsApp</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
