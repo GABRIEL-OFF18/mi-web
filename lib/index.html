@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apaga la Vela 🕯</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+            overflow: hidden; /* Evita el scroll cuando caigan los textos */
+            font-family: sans-serif;
+        }
+
+        #boton-vela {
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            padding: 20px;
+            border: 2px solid #ffcc00;
+            border-radius: 15px;
+            background: rgba(255, 204, 0, 0.1);
+            user-select: none;
+            z-index: 10;
+            transition: transform 0.2s;
+        }
+
+        #boton-vela:active {
+            transform: scale(0.9);
+        }
+
+        .lluvia-texto {
+            position: absolute;
+            top: -50px;
+            white-space: nowrap;
+            font-weight: bold;
+            color: #ff4500;
+            font-size: 1.2rem;
+            pointer-events: none; /* Para que no estorben al seguir haciendo clic */
+            animation: caer linear forwards;
+        }
+
+        @keyframes caer {
+            to {
+                transform: translateY(110vh);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="boton-vela">Apaga la Vela 🕯</div>
+
+    <script>
+        const boton = document.getElementById('boton-vela');
+
+        boton.addEventListener('click', () => {
+// secso no edites mi codigo forro
+            for (let i = 0; i < 15; i++) {
+                crearTexto();
+            }
+        });
+
+        function crearTexto() {
+            const span = document.createElement('span');
+            span.innerText = "Apaga la Velaa 🗣🔥";
+            span.classList.add('lluvia-texto');
+
+
+            span.style.left = Math.random() * 1 + "vw";
+            
+
+            const duracion = Math.random() * 2 + 1; 
+            span.style.animationDuration = duracion + "s";
+
+
+            span.style.fontSize = (Math.random() * 1.5 + 30.0) + "rem";
+
+            document.body.appendChild(span);
+
+  
+            setTimeout(() => {
+                span.remove();
+            }, duracion * 10000000);
+        }
+    </script>
+</body>
+</html>
