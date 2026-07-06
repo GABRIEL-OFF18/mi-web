@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌷 Para mi Bachira 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #4a0080 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Pantalla de candado */
+        #lock-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .lock-box {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 3rem;
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .lock-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        
+        input[type="password"] {
+            padding: 15px;
+            font-size: 1.5rem;
+            width: 220px;
+            text-align: center;
+            border: none;
+            border-radius: 50px;
+            margin: 1rem 0;
+        }
+        
+        /* Contenido principal */
+        .main-content {
+            display: none;
+            padding-top: 80px;
+        }
+        
+        .music-player {
+            position: fixed;
+            top: 120px;
+            right: 40px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 6px solid #ff4081;
+            box-shadow: 0 0 40px rgba(255, 64, 129, 0.6);
+            z-index: 100;
+        }
+        
+        .music-player input {
+            width: 140px;
+            background: transparent;
+            border: none;
+            color: white;
+            text-align: center;
+        }
+        
+        .center-area {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .photos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .photo-frame {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid #ff80ab;
+            box-shadow: 0 15px 40px rgba(255, 128, 171, 0.5);
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .message {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin: 2rem 0;
+            line-height: 1.3;
+            color: #ff80ab;
+        }
+        
+        .love-text {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            color: #ffb3d1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pantalla de candado -->
+    <div id="lock-screen">
+        <div class="lock-box">
+            <div class="lock-icon">🔒</div>
+            <h2>Esta página es solo para ti</h2>
+            <p>Ingresa la contraseña</p>
+            <input type="password" id="password" placeholder="••••" maxlength="4">
+            <br>
+            <button onclick="unlock()" style="margin-top:15px; padding:12px 40px; background:#ff4081; border:none; border-radius:50px; color:white; font-size:1.1rem; cursor:pointer;">Desbloquear 💕</button>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content" id="main">
+        <!-- Reproductor de música redondo -->
+        <div class="music-player">
+            <div>
+                <h3 style="font-size:1rem; margin-bottom:8px;">🎵 Nuestra canción</h3>
+                <input type="text" id="songUrl" placeholder="Pega URL aquí" style="background:rgba(255,255,255,0.2); padding:8px; border-radius:20px;">
+                <button onclick="playMusic()" style="margin-top:10px; padding:8px 20px; background:#ff4081; border:none; border-radius:20px; color:white; cursor:pointer;">Reproducir</button>
+            </div>
+        </div>
+
+        <div class="center-area">
+            <h1 style="font-size:3rem; margin-bottom:1rem;">🌷 Para mi persona favorita 🌷</h1>
+            
+            <div class="photos">
+                <!-- Aquí debes reemplazar las URLs con tus fotos reales -->
+                <div class="photo-frame">
+                    <img src="https://via.placeholder.com/260x260/ff80ab/ffffff?text=TU+FOTO" alt="Tu foto">
+                </div>
+                <div class="photo-frame">
+                    <img src="https://via.placeholder.com/260x260/ff4081/ffffff?text=FOTO+DE+TU+AMIGA" alt="Foto de tu amiga">
+                </div>
+            </div>
+
+            <div class="message">
+                SIEMPRE SERÁS MI BACHIRA<br>
+                DE MI ISAGI 💕✨
+            </div>
+
+            <div class="love-text">
+                TE QUIERO MUCHO CIELOUS<br>
+                Gracias por ser mi mejor amiga 🌸
+            </div>
+
+            <button onclick="createBouquet()" class="btn" style="margin-top:3rem; background:linear-gradient(45deg,#ff4081,#ff80ab); padding:1rem 3rem; font-size:1.3rem;">
+                Crear Bouquet Digital para Ella 💐
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function unlock() {
+            const pass = document.getElementById('password').value;
+            if (pass === "2345") {
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('main').style.display = 'block';
+            } else {
+                alert("Contraseña incorrecta 💔 Inténtalo de nuevo");
+            }
+        }
+
+        function playMusic() {
+            const url = document.getElementById('songUrl').value;
+            if (url) {
+                window.open(url, '_blank');
+            } else {
+                alert("Pega una URL de YouTube o Spotify primero 🎵");
+            }
+        }
+
+        function createBouquet() {
+            alert("¡Bouquet creado con mucho amor! 💐\n\nCopia este enlace y envíaselo:\nhttps://floresdigitales.example.com/bachira-isagi-" + Date.now());
+        }
+
+        // Efecto de pétalos
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.textContent = '🌸';
+            petal.style.position = 'fixed';
+            petal.style.fontSize = '2rem';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.top = '-50px';
+            petal.style.zIndex = '10';
+            petal.style.opacity = '0.8';
+            document.body.appendChild(petal);
+            
+            let y = -50;
+            const fall = setInterval(() => {
+                y += 3;
+                petal.style.top = y + 'px';
+                if (y > window.innerHeight) {
+                    clearInterval(fall);
+                    petal.remove();
+                }
+            }, 30);
+        }
+        
+        setInterval(createPetal, 600);
+    </script>
+</body>
+</html>
