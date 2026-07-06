@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌷 Para mi Bachira 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #4a0080 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Candado */
+        #lock-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .lock-box {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 3rem;
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+        }
+
+        .lock-icon { font-size: 5rem; margin-bottom: 1rem; }
+
+        input[type="password"] {
+            padding: 15px;
+            font-size: 1.5rem;
+            width: 220px;
+            text-align: center;
+            border: none;
+            border-radius: 50px;
+            margin: 1rem 0;
+        }
+
+        /* Música */
+        .music-player {
+            position: fixed;
+            top: 100px;
+            right: 40px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 8px solid #ff4081;
+            box-shadow: 0 0 40px rgba(255, 64, 129, 0.7);
+            overflow: hidden;
+        }
+
+        .disc {
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, #ff80ab 0%, #c2185b 100%);
+            border-radius: 50%;
+            border: 12px solid #fff;
+            box-shadow: 0 0 30px rgba(255, 64, 129, 0.8),
+                        inset 0 0 20px rgba(0,0,0,0.6);
+            animation: spin 3.5s linear infinite paused;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            color: white;
+            text-shadow: 0 0 10px black;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .disc.playing {
+            animation-play-state: running;
+        }
+
+        .center-area {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .photos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .photo-frame {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid #ff80ab;
+            box-shadow: 0 15px 40px rgba(255, 128, 171, 0.5);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .message {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            margin: 1.5rem 0;
+            line-height: 1.3;
+            color: #ff80ab;
+        }
+
+        .love-text {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: #ffb3d1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Candado -->
+    <div id="lock-screen">
+        <div class="lock-box">
+            <div class="lock-icon">🔒</div>
+            <h2>Para mis ojos solamente</h2>
+            <p>Ingresa la contraseña</p>
+            <input type="password" id="password" placeholder="••••" maxlength="4">
+            <br><br>
+            <button onclick="unlock()" style="padding:12px 40px; background:#ff4081; border:none; border-radius:50px; color:white; font-size:1.1rem; cursor:pointer;">Desbloquear 💕</button>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content" id="main">
+        <!-- Disco giratorio -->
+        <div class="music-player">
+            <div class="disc" id="disc">
+                💿
+            </div>
+        </div>
+
+        <div class="center-area">
+            <h1 style="font-size:3rem; margin-bottom:1rem;">🌷MY CIELOUS🌷</h1>
+
+            <div class="photos">
+                <div class="photo-frame">
+                    <img src="https://files.catbox.moe/vtpwpy.jpg" alt="Tu foto">
+                </div>
+                <div class="photo-frame">
+                    <img src="https://files.catbox.moe/8aig72.jpg" alt="Foto de tu amiga">
+                </div>
+            </div>
+
+            <div class="message">
+                SIEMPRE SERÁS MI BACHIRA<br>
+                DE MI ISAGI 💕✨
+            </div>
+
+            <div class="love-text">
+                TE QUIERO MUCHO CIELOUS<br>
+                Gracias por ser mi mejor amiga
+            </div>
+
+            <h2 style="margin: 3rem 0 1.5rem; color:#ff80ab;">Más recuerdos nuestros 💕</h2>
+            <div class="photos">
+                <div class="photo-frame">
+                    <img src="https://via.placeholder.com/260x260/ffb3d1/ffffff?text=FOTO+1" alt="Foto extra 1">
+                </div>
+                <div class="photo-frame">
+                    <img src="https://via.placeholder.com/260x260/ff80ab/ffffff?text=FOTO+2" alt="Foto extra 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reproductor oculto -->
+    <audio id="audioPlayer" loop preload="auto"></audio>
+
+    <script>
+        const audio = document.getElementById('audioPlayer');
+        const disc = document.getElementById('disc');
+
+        // === URL DE TU CANCIÓN (cámbiala aquí si quieres) ===
+        const songUrl = "https://files.catbox.moe/qdp6u1.mp4";
+
+        function unlock() {
+            if (document.getElementById('password').value === "2345") {
+                document.getElementById('lock-screen').style.display = 'none';
+                document.getElementById('main').style.display = 'block';
+                
+                // Reproducir automáticamente al desbloquear
+                audio.src = songUrl;
+                audio.play().catch(err => {
+                    console.log("Autoplay bloqueado por el navegador:", err);
+                });
+                disc.classList.add('playing');
+            } else {
+                alert("Contraseña incorrecta 💔");
+            }
+        }
+
+        // Pétalos cayendo
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.textContent = ['🌸','🌷','💕','✨'][Math.floor(Math.random()*4)];
+            petal.style.position = 'fixed';
+            petal.style.fontSize = '1.8rem';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.top = '-50px';
+            petal.style.zIndex = '5';
+            document.body.appendChild(petal);
+
+            let y = -50;
+            const fall = setInterval(() => {
+                y += 3.5;
+                petal.style.top = y + 'px';
+                if (y > window.innerHeight) petal.remove();
+            }, 30);
+        }
+
+        setInterval(createPetal, 500);
+    </script>
+</body>
+</html>
